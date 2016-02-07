@@ -26,12 +26,11 @@ def has_password(password):
     return has
 
 def build_object_dictionary(name, description, link, crude_password, longitude, latitude):
-    has_pwd = has_password(crude_password)
     object_dictionary = {
     "name": name,
     "description": description,
     "link":link,
-    "has_password" : has_pwd,
+    "has_password" : has_password(crude_password),
     "password": hash_password(crude_password),
     "location": return_geopoint(longitude,latitude)
     }
